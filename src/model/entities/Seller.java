@@ -1,4 +1,4 @@
-package model.enitities;
+package model.entities;
 import java.io.Serializable;
 import java.time.LocalDate;
 
