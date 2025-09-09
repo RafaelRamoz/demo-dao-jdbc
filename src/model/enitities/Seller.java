@@ -1,23 +1,26 @@
 package model.enitities;
+import java.io.Serializable;
 import java.time.LocalDate;
 
-public class Seller {
+public class Seller implements Serializable {
     private Integer id;
     private  String name;
     private String email;
     private LocalDate birthDate;
     private Double baseSalary;
 
-    public Seller(){
+    private Department department;
 
+    public Seller(){
     }
 
-    public Seller(Integer id, String name, String email, LocalDate birthDate, Double baseSalary){
+    public Seller(Integer id, String name, String email, LocalDate birthDate, Double baseSalary, Department department){
         this.id = id;
         this.name = name;
         this.email = email;
         this.birthDate = birthDate;
         this.baseSalary = baseSalary;
+        this.department = department;
     }
 
     public void setId(Integer id){
@@ -58,6 +61,14 @@ public class Seller {
 
     public Double getBaseSalary(){
         return baseSalary;
+    }
+
+    public void setDepartment(Department department){
+        this.department = department;
+    }
+
+    public Department getDepartment(){
+        return department;
     }
 
     @Override
