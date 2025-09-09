@@ -1,11 +1,14 @@
-import db.DB;
-import java.sql.Connection;
+import model.dao.DaoFactory;
+import model.dao.SellerDao;
+import model.entities.Seller;
 
 public class App {
     public static void main(String[] args) throws Exception {
         
-        Connection conn = DB.getConnection();
+        SellerDao sellerdao = DaoFactory.createSellerDao();
 
-        System.out.println(conn);
+        Seller seller = sellerdao.findById(3);
+
+        System.out.println(seller);
     }
 }
