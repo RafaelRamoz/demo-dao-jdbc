@@ -1,6 +1,7 @@
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
+import java.util.Scanner;
 
 import model.dao.DaoFactory;
 import model.dao.SellerDao;
@@ -45,12 +46,20 @@ public class App {
 
 
         System.out.println("\n\n=== TEST 05 = Seller Update ===");
-        seller = sellerDao.findById(1);
+
+        seller = sellerDao.findById(2);
         seller.setName("Martha waine");
         sellerDao.update(seller);
-
         System.out.println("Update Complete");
 
+
+        System.out.println("\n\n=== TEST 06 = Delete from Seller ===");
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the id to delete: ");
+        int id = sc.nextInt();
+        sellerDao.DeleteById(id);
+        System.out.println("Delete Completed!");
+        sc.close();
 
 
     }
